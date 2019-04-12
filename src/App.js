@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import styled, { ThemeProvider } from "styled-components";
 import marked from 'marked';
 
@@ -128,7 +129,7 @@ const Preview = styled.div`
 
   }
 `
-export default function App(props){
+function App(){
   const [currentInput, setCurrentInput] = useState(initialState);
   const [twoColumns, setTwoColumns] = useState(false);
   
@@ -172,3 +173,5 @@ export default function App(props){
     </ThemeProvider>
   )
 }
+ReactDOM.render(<App />,
+  document.getElementById('root'));
